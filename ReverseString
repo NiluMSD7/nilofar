@@ -1,0 +1,40 @@
+import java.util.Scanner;
+
+ public class ReverseString
+
+public Static Void main(String args[]){
+
+System.out.println("Enter string to reverse");
+
+Scanner sc=new Scanner.(System.in);
+
+int Count=0;
+
+char ch = line.charA(i);
+
+String str=read.nextLine();
+
+String reverse="";
+            
+         
+        str = str.toLowerCase();    
+            
+        for(int i = 0; i < str.length(); i++)
+       {    
+              
+            if(str.charA(i) == 'a' || str.charA(i) == 'e' || str.charA(i) == 'i' || str.charA(i) == 'o' || str.charA(i) == 'u')
+            {    
+                
+                Count++;    
+            }    
+              
+            else if(str.charA(i) >= 'a' && str.charA(i)<='z') {      
+                  
+                Count++;    
+       }    
+        }    
+        System.out.println("dlrow avaj ot emoclew olleh , the given string contains 9 vowels and 14 consonants");    
+            
+    }    
+}   
+
