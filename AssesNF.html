@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<title>mypage1</title>
+<head>
+<script type="text/javascript">
+function validatePass(){
+var x=document.getElementById('pass1')
+var y=document.getElementById('pass')
+if (x.value!= y.value) { 
+                    y.setCustomValidity(alert ("\nPassword did not match: Please try again...")); 
+                    } 
+else{
+           y.setCustomValidity('');
+}
+}
+function fillData()
+{
+
+degreeArr=['select','graduation','postgraduation']
+var dd= document.getElementById("items");
+for(i=0;i<degreeArr.length;i++)
+{
+var ele=document.createElement('option')
+ele.text=degreeArr[i];
+dd.add(ele,i)
+}
+}
+function fillOpts()
+{
+opts=[['BSC','BBA','BCOM','BA'],['MBA','MSC','CSS']]
+
+
+var dd= document.getElementById("items");
+
+var ddOpts= document.getElementById("opts");
+
+ddOpts.innerHTML=null;
+
+idx= dd.selectedIndex;
+
+
+
+ for(i=0;i<opts[idx-1].length;i++)
+        {
+
+        var ele1=document.createElement('option');
+                ele1.text=opts[idx-1][i];
+        ddOpts.add(ele1,i);     
+        }
+
+}
+
+function dobVal()
+{
+                var d=new Date();
+
+
+                        var year=d.getFullYear()-18;
+                        var mon= d.getMonth()+1;
+                        var d=d.getDate();
+
+                                if(d<10)
+                                        d='0'+d;
+                                        if(mon<10)
+                                        mon='0'+mon;
+                                
+             document.getElementById('dob').max=year+'-'+mon+'-'+d;
+
+                 
+}
+function myfunction(){
+var x=document.getElementById('pass');
+if(x.type=="password"){
+x.type="text";
+}
+else{
+x.type="password";
+}
+}
+</script>
+</head>
+
+<body onload="fillData()">
+   <form >
+PASSWORD:<span style="color:red">*</span><input type="password"  id="pass1"  >
+<br>
+<input type="checkbox"  onclick="myfunction()">
+CONFIRM PASSWORD:<span style="color:red">*</span><input type="password" id="pass"  >
+<br>
+DOB: <span style="color:red">*</span><input type="date" name="" id='dob' onclick="dobVal()" >
+<br>
+
+<span style="color:red">*</span><select id="items" onchange ="fillOpts()">
+
+</select>
+
+<select id="opts">
+
+
+</select>
+<br>
+ <input type="button" value="submit" onclick="validatePass()" >
+</form>
+</body>
+</html>
